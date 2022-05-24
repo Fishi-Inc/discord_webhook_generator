@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Small Plan",
+        "desc": "__Lifetime:__\n2GB Ram\n1 vCore\n50GB HDD",
+        "price": "Price: 69 SEK | 9$",
+        "icon": "",
+        "color": "b3b522"
+    },
+    {
+        "title": "Basic Plan",
+        "desc": "__Lifetime:__\n16GB Ram\n6vCore\n200GB HHD",
+        "price": "Price: 188 SEK | 22$",
+        "icon": "",
+        "color": "269444"
+    },
+    {
+        "title": "Premium Plan",
+        "desc": "__Lifetime:__\n128GB Ram\n60 vCore\n800GB HHD",
+        "price": "Price: 795 SEK | 80 $",
+        "icon": "",
+        "color": "266194"
+    },
+    {
+        "title": "Custom Build",
+        "desc": "Open ticket we can do anything you want",
+        "price": "<#976966435945480202>",
+        "icon": "",
+        "color": "7a2a21"
+    }
+]
