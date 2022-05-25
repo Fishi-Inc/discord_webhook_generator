@@ -2,5 +2,4 @@ discord_webhook >= 0.16.3
 Pillow >= 9.1.1
 requests >= 2.27.1
 colorama >= 0.4.4
-prettytable >= 3.3.0
 InquirerPy >= 1.0.3
