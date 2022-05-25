@@ -52,6 +52,25 @@ info['desc'] = inquirer.text(
 
 #fields
 
+add_field = inquirer.confirm(
+    message='add field?',
+    style=style,
+).execute()
+
+while (add_field) {
+    get_fields = info['fields'].lenght
+    info[f'fields[{get_fields}]'] = inquirer.text(
+        message='field title:   '
+        style=style,
+    ).execute()
+    add_field = inquirer.confirm(
+        message='add another fields?',
+        style=style,
+    ).execute()
+}
+
+#info['field']
+
 info['footer'] = inquirer.text(
     message='footer:        ',
     style=style,
