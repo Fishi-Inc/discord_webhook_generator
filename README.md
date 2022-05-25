@@ -7,12 +7,10 @@ You can send beautiful embeds which can be easly generated in the terminal.
 
 require python >= 3.7
 
-### Windows:
-
 `execute install.bat`
 
-### Linux:
+**or**
 
-go in the downloaded directory and type this command in the terminal
+type this in your terminal: 
 `pip install -r requirement.txt`
 
