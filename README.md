@@ -1,4 +1,4 @@
-#Discord Webhook Generator
+# Discord Webhook Generator
 
 A simple webhook generator to send messages to a discord channel.
 You can send beautiful embeds which can be easly generated in the terminal.
