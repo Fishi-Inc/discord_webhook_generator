@@ -6,9 +6,6 @@ import json
 import time
 import os
 import re
-from PIL import Image
-import requests
-from io import BytesIO
 from colorama import init, Fore, Style
 init(autoreset=True)
 
