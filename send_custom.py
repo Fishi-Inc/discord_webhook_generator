@@ -21,6 +21,7 @@ print('\n')
 help_msg = 'To see how webhooks are formatted, visit https://github.com/Fishi-Inc/discord_webhook_generator'
 hint_msg = 'Leave blank if you don\'t need'
 info = {}
+fields = [{}]
 style = get_style({'questionmark': 'hidden','answer': 'fg:blue', 'long_instruction': 'bg:white fg:black', 'input': 'fg:aqua'}, style_override=True)
 
 info['url'] = inquirer.secret(
@@ -57,18 +58,23 @@ add_field = inquirer.confirm(
     style=style,
 ).execute()
 
-while (add_field) {
-    get_fields = info['fields'].lenght
-    info[f'fields[{get_fields}]'] = inquirer.text(
+while (add_field):
+    get_fields = len(fields[])
+    fields[get_fields]['title'] = inquirer.text(
         message='field title:   '
         style=style,
     ).execute()
+    fields[get_fields]['title'] = inquirer.text(
+        message='field desc:    ',
+        style=style,
+    )
     add_field = inquirer.confirm(
         message='add another fields?',
         style=style,
     ).execute()
-}
 
+
+print(fields)
 #info['field']
 
 info['footer'] = inquirer.text(
