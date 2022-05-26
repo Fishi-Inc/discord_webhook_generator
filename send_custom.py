@@ -59,7 +59,7 @@ add_field = inquirer.confirm(
 ).execute()
 
 while (add_field):
-    get_fields = len(fields[])
+    get_fields = len(fields)
     fields[get_fields]['title'] = inquirer.text(
         message='field title:   '
         style=style,
