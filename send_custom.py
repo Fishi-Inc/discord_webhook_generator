@@ -62,11 +62,9 @@ while (add_field):
     get_fields = len(fields)
     fields[get_fields]['title'] = inquirer.text(
         message='field title:   '
-        style=style,
     ).execute()
     fields[get_fields]['title'] = inquirer.text(
         message='field desc:    ',
-        style=style,
     )
     add_field = inquirer.confirm(
         message='add another fields?',
