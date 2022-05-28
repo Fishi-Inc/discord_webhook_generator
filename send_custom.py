@@ -18,7 +18,7 @@ print('\n')
 help_msg = 'To see how webhooks are formatted, visit https://github.com/Fishi-Inc/discord_webhook_generator'
 hint_msg = 'Leave blank if you don\'t need'
 info = {}
-fields = [{}]
+fields = []
 style = get_style({'questionmark': 'hidden','answer': 'fg:blue', 'long_instruction': 'bg:white fg:black', 'input': 'fg:aqua'}, style_override=True)
 
 info['url'] = inquirer.secret(
@@ -57,12 +57,14 @@ add_field = inquirer.confirm(
 
 while (add_field):
     get_fields = len(fields)
-    fields[get_fields]['title'] = inquirer.text(
+    field_title = inquirer.text(
         message='field title:   '
     ).execute()
-    fields[get_fields]['title'] = inquirer.text(
+    fields.append(field_title)
+    field_desc = inquirer.text(
         message='field desc:    ',
-    )
+    ).execute()
+    fields.append(field_desc)
     add_field = inquirer.confirm(
         message='add another fields?',
         style=style,
@@ -116,6 +118,9 @@ try:
     if (info['footer'] != ''):      embed.set_footer(text=info['footer'])
     if (info['timestamp']):         embed.set_timestamp()
     if (info['color'] != ''):       embed.set_color(info['color'])
+    if (fields != []):
+        for x in fields:
+            embed.add_embed_field(name=field[x[0]], value[x[1]])
     webhook.add_embed(embed)
     webhook.avatar_url = config['webhook_avatar']
     webhook.username = config['webhook_name']
