@@ -134,4 +134,4 @@ except Exception:
     print(Fore.RED + 'Error:')
     traceback.print_exc()
     print('')
-    input('Press enter to exit...')^
+    input('Press enter to exit...')
