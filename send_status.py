@@ -22,18 +22,18 @@ else:
 
 print(Back.WHITE + Fore.BLACK + '\nAvailable Arguments:')
 table = PrettyTable()
-table.field_names = ['Status', 'Alias',  'Description']
+table.field_names = ['Status', 'Description']
 table.align['Status'] = 'c'
-table.align['Alias'] = 'c'
-table.align['Description'] = 'r'
-table.add_row(['1', 'available', 'Displays the status as ' + Fore.GREEN + 'GOOD' + Fore.RESET])
-table.add_row(['2', 'wip', 'Displays the status as ' + Fore.YELLOW + 'Work In Proccess' + Fore.RESET])
-table.add_row(['3', 'stopped', 'Displays the status as ' + Fore.RED + 'STOPPED' + Fore.RESET])
+table.align['Description'] = 'l'
+table.add_row(['1', 'up',])
+table.add_row(['2', 'bug'])
+table.add_row(['3', 'down'])
 
 print(table)
 
 status = input('\nEnter status: ')
-print('\nEnter description: \n')
+title = input('Enter title: ')
+print('\nEnter description:')
 desc = input('> ')
 if (status == '1'):
     color = '309430'
@@ -51,8 +51,7 @@ else:
 print('\nSending webhook...')
 
 webhook = DiscordWebhook(url=url)
-embed = DiscordEmbed(description=desc, color=color)
-embed.set_author(name='Status:')
+embed = DiscordEmbed(title=(icon + ' ' + title), description=desc, color=color)
 embed.set_timestamp()
 webhook.add_embed(embed)
 webhook.avatar_url = config['webhook_avatar']
