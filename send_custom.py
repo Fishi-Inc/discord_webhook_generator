@@ -5,7 +5,7 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 import json
 import time
 import os
-import re
+import traceback
 from colorama import init, Fore, Style
 init(autoreset=True)
 
@@ -119,13 +119,19 @@ try:
     if (info['timestamp']):         embed.set_timestamp()
     if (info['color'] != ''):       embed.set_color(info['color'])
     if (fields != []):
-        for x in fields:
-            embed.add_embed_field(name=field[x[0]], value[x[1]])
+        n = 0
+        while n <= len(fields):
+            if (n % 2) == 0:
+                embed.add_embed_field(name=field[n], value=field[n+1])
+            n += 1
     webhook.add_embed(embed)
     webhook.avatar_url = config['webhook_avatar']
     webhook.username = config['webhook_name']
     webhook.execute()
     print(Style.BRIGHT + Fore.GREEN + 'Successfully sent webhook!\n')
-except:
+except Exception:
     print(Style.BRIGHT + Fore.RED + 'Something went wrong\n')
-    input('Press enter to exit...')
+    print(Fore.RED + 'Error:')
+    traceback.print_exc()
+    print('')
+    input('Press enter to exit...')^
