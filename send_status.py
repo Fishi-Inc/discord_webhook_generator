@@ -52,6 +52,7 @@ print('\nSending webhook...')
 
 webhook = DiscordWebhook(url=url)
 embed = DiscordEmbed(title=(icon + ' ' + title), description=desc, color=color)
+#embed.set_author(name=)
 embed.set_timestamp()
 webhook.add_embed(embed)
 webhook.avatar_url = config['webhook_avatar']
